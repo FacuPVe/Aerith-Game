@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package interfaces;
+package model.items;
 
 /**
  *
  * @author Facundo Vera
  */
-import model.characters.Character;
-
-public interface Attackable {
-    void attack(Character target);
+public class Shield {
+    
 }
