@@ -15,7 +15,17 @@ public class Enemy extends Character {
 
     @Override
     public void attack(Character target) {
-        System.out.println(getName() + " attacks " + target.getName() + " for " + getDamage() + " damage!");
-        target.takeDamage(getDamage());
+        try {
+            if (target == null) {
+                throw new IllegalArgumentException("No se puede atacar a un objetivo nulo");
+            }
+            if (!target.isAlive()) {
+                throw new IllegalStateException("No se puede atacar a un objetivo muerto");
+            }
+            System.out.println(getName() + " ataca a " + target.getName() + " haciendo " + getDamage() + " de daño!");
+            target.takeDamage(getDamage());
+        } catch (IllegalArgumentException | IllegalStateException enemyAttackError) {
+            System.out.println("Error en el ataque del enemigo: " + enemyAttackError.getMessage());
+        }
     }
 }

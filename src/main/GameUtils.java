@@ -33,13 +33,21 @@ public class GameUtils {
     }
 
     public static NPC generateNPC(Inventory playerInventory) {
-        String[] dialogues = {
-            "¡Hola viajero! Toma esta poción para tu aventura.",
-            "No es seguro andar solo, llévate esta espada.",
-            "El infierno está lleno de peligros, prepárate bien."
-        };
-        Item reward = random.nextBoolean() ? generatePotion() : generateWeapon();
-        return new NPC("Sabio", dialogues[random.nextInt(dialogues.length)], reward, playerInventory);
+        try {
+            if (playerInventory == null) {
+                throw new IllegalArgumentException("El inventario del jugador no puede ser nulo");
+            }
+            String[] dialogues = {
+                "¡Hola viajero! Toma esta poción para tu aventura.",
+                "No es seguro andar solo, llévate esta espada.",
+                "El infierno está lleno de peligros, prepárate bien."
+            };
+            Item reward = random.nextBoolean() ? generatePotion() : generateWeapon();
+            return new NPC("Sabio", dialogues[random.nextInt(dialogues.length)], reward, playerInventory);
+        } catch (Exception e) {
+            System.out.println("Error al generar NPC: " + e.getMessage());
+            return null;
+        }
     }
 
     public static boolean isBossStage(int x, int y) {

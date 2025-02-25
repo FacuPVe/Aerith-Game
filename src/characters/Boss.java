@@ -16,7 +16,7 @@ public class Boss extends Enemy {
 
     @Override
     public void attack(Character target) {
-        System.out.println(getName() + " unleashes a deadly attack on " + target.getName() + "!");
+        System.out.println(getName() + " le lanza un ataca mortal a " + target.getName() + "!");
         target.takeDamage(getDamage() + 5);
     }
 }

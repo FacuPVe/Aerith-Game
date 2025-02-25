@@ -4,6 +4,9 @@
  */
 package characters;
 
+import exceptions.CharacterDeadException;
+import exceptions.CombatException;
+
 /**
  *
  * @author Facundo Vera
@@ -15,6 +18,15 @@ public abstract class Character {
     private int damage;
 
     public Character(String name, int hp, int damage) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre del personaje no puede estar vacío");
+        }
+        if (hp <= 0) {
+            throw new IllegalArgumentException("La salud (HP) debe ser mayor que 0");
+        }
+        if (damage < 0) {
+            throw new IllegalArgumentException("El daño no puede ser negativo");
+        }
         this.name = name;
         this.hp = hp;
         this.damage = damage;
@@ -23,9 +35,19 @@ public abstract class Character {
     public abstract void attack(Character target);
 
     public void takeDamage(int damage) {
-        this.hp -= damage;
-        if (this.hp < 0) this.hp = 0;
-        System.out.println(name + " took " + damage + " damage. HP left: " + hp);
+        try {
+            if (!isAlive()) {
+                throw new CharacterDeadException("No se puede dañar a un personaje muerto: " + getName());
+            }
+            if (damage < 0) {
+                throw new CombatException("El daño no puede ser negativo: " + damage);
+            }
+            this.hp -= damage;
+            if (this.hp < 0) this.hp = 0;
+            System.out.println(name + " took " + damage + " damage. HP left: " + hp);
+        } catch (CharacterDeadException | CombatException e) {
+            System.out.println("Error al aplicar daño: " + e.getMessage());
+        }
     }
 
     public boolean isAlive() {

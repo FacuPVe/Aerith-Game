@@ -16,7 +16,7 @@ public class NPC extends Character implements Interactable {
     private String dialogue;
     private Item reward;
     private Inventory playerInventory;
-    private int x, y; // Posición del NPC en el mapa
+    private int x, y;
 
     public NPC(String name, String dialogue, Item reward, Inventory playerInventory) {
         super(name, 100, 0);

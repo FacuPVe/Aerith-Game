@@ -13,12 +13,20 @@ public class Weapon extends Item {
 
     public Weapon(String name, int weight, int attackBonus) {
         super(name, weight);
-        this.attackBonus = attackBonus;
+        try {
+            if (attackBonus < 0) {
+                throw new IllegalArgumentException("El bonus de ataque no puede ser negativo");
+            }
+            this.attackBonus = attackBonus;
+        } catch (IllegalArgumentException weaponError) {
+            System.out.println("Error al crear arma: " + weaponError.getMessage());
+            throw weaponError;
+        }
     }
 
     @Override
     public void use() {
-        System.out.println(getName() + " equipped! Attack bonus: " + attackBonus);
+        System.out.println(getName() + " equipada! Ataque bonus: " + attackBonus);
     }
 
     public int getAttackBonus() {

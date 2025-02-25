@@ -6,14 +6,18 @@
             <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/interfaces/Attackable.java</file>
             <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/interfaces/Interactable.java</file>
             <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/characters/Enemy.java</file>
-            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/characters/Boss.java</file>
-            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/main/Game.java</file>
+            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/items/Shield.java</file>
             <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/main/GameUtils.java</file>
             <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/characters/Player.java</file>
-            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/main/Inventory.java</file>
+            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/items/Potion.java</file>
             <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/characters/Character.java</file>
             <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/interfaces/Movable.java</file>
+            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/items/Item.java</file>
+            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/characters/Boss.java</file>
+            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/main/Game.java</file>
+            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/main/Inventory.java</file>
             <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/interfaces/Healable.java</file>
+            <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/main/Skill.java</file>
             <file>file:/C:/Users/Facundo%20Vera/Documents/NetBeansProjects/ProyectoUF4-Aerith/src/characters/NPC.java</file>
         </group>
     </open-files>

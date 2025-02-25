@@ -18,8 +18,15 @@ public class Inventory {
     private List<Item> items = new ArrayList<>();
 
     public void addItem(Item item) {
-        items.add(item);
-        System.out.println(item.getName() + " added to inventory.");
+        try {
+            if (item == null) {
+                throw new IllegalArgumentException("No se puede añadir un item nulo");
+            }
+            items.add(item);
+            System.out.println(item.getName() + " se ha añadido al inventario.");
+        } catch (IllegalArgumentException addItemError) {
+            System.out.println("Error al añadir item: " + addItemError.getMessage());
+        }
     }
 
     public List<Item> getItems() {

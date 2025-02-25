@@ -10,6 +10,7 @@ package characters;
  */
 import interfaces.Movable;
 import main.Inventory;
+import exceptions.InvalidMovementException;
 
 public class Player extends Character implements Movable {
 
@@ -25,9 +26,16 @@ public class Player extends Character implements Movable {
 
     @Override
     public void move(int newX, int newY) {
-        this.x = newX;
-        this.y = newY;
-        System.out.println(getName() + " moved to (" + x + "," + y + ")");
+        try {
+            if (newX < 0 || newY < 0) {
+                throw new InvalidMovementException("Las coordenadas no pueden ser negativas: (" + newX + "," + newY + ")");
+            }
+            this.x = newX;
+            this.y = newY;
+            System.out.println(getName() + " moved to (" + x + "," + y + ")");
+        } catch (InvalidMovementException e) {
+            System.out.println("Error de movimiento: " + e.getMessage());
+        }
     }
 
     @Override
