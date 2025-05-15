@@ -5,22 +5,24 @@
 package main;
 /**
  *
- * @author Facundo Vera
+ @author Facundo Vera y Hector Iranzo
  */
-import characters.Player;
-import characters.Enemy;
 import characters.Boss;
+import characters.Enemy;
 import characters.NPC;
+import characters.Player;
+import exceptions.*;
 import java.util.Random;
-import java.util.Scanner;
+import java.util.Scanner; // Import specific exception if needed
 
 public class Game {
     private static final int SIZE = 10;
     private static char[][] map = new char[SIZE][SIZE];
     private static NPC[] npcs;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MovimientoInvalidoException, MaxValuesException {
         Scanner scanner = new Scanner(System.in);
+   
         Random random = new Random();
         Player player = new Player("Aerith", 100, 15, 0, 0);
         
@@ -57,6 +59,8 @@ public class Game {
     }
 
     private static void generateMap() {
+    
+    
         for (int i = 0; i < SIZE; i++)
             for (int j = 0; j < SIZE; j++)
                 map[i][j] = '.';
@@ -64,6 +68,7 @@ public class Game {
     }
 
     private static void printMap(Player player) {
+        System.out.flush(); 
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 if (i == player.getX() && j == player.getY()) System.out.print("P ");
@@ -81,15 +86,20 @@ public class Game {
         return false;
     }
 
-    private static void movePlayer(Player player, char move) {
-        int x = player.getX(), y = player.getY();
+// Excepcion 1 !!!
+
+private static void movePlayer(Player player, char move) throws MovimientoInvalidoException {
+    int x = player.getX(), y = player.getY();
+
         switch (move) {
             case 'w': if (x > 0) player.move(x - 1, y); break;
             case 's': if (x < SIZE - 1) player.move(x + 1, y); break;
             case 'a': if (y > 0) player.move(x, y - 1); break;
             case 'd': if (y < SIZE - 1) player.move(x, y + 1); break;
+            default: throw new MovimientoInvalidoException(String.valueOf(move)); // Aquí se lanza si no coincide
         }
-    }
+    } 
+        
 
     private static void interactWithNPC(Player player) {
         for (NPC npc : npcs) {
@@ -107,4 +117,19 @@ public class Game {
             if (enemy.isAlive()) enemy.attack(player);
         }
     }
+
+    // Excepción por defecto (usando Exception)
+
+
+    // Excepción personalizada similar a ClassNotFoundException
+    public static class GameClassNotFoundException extends ClassNotFoundException {
+        public GameClassNotFoundException() {
+            super("Clase no encontrada en el juego.");
+        }
+        public GameClassNotFoundException(String message) {
+            super(message);
+        }
+    }
+
+
 }

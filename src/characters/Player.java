@@ -8,6 +8,7 @@ package characters;
  *
  * @author Facundo Vera
  */
+import exceptions.MaxValuesException;
 import interfaces.Movable;
 import main.Inventory;
 
@@ -16,7 +17,7 @@ public class Player extends Character implements Movable {
     private int x, y;
     private Inventory inventory;
 
-    public Player(String name, int hp, int damage, int startX, int startY) {
+    public Player(String name, int hp, int damage, int startX, int startY) throws MaxValuesException {
         super(name, hp, damage);
         this.x = startX;
         this.y = startY;

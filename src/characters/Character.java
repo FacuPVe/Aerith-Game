@@ -1,23 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package characters;
+
+import exceptions.MaxValuesException;
 
 /**
  *
- * @author Facundo Vera
+@author Facundo Vera y Hector Iranzo
  */
 
 public abstract class Character {
     private String name;
     private int hp;
     private int damage;
+    private static final int MAX_DAMAGE = 100;
 
-    public Character(String name, int hp, int damage) {
+    public Character(String name, int hp, int damage) throws MaxValuesException {
         this.name = name;
         this.hp = hp;
-        this.damage = damage;
+        setDamage(damage); // Validación del daño inicial
     }
 
     public abstract void attack(Character target);
@@ -48,7 +47,11 @@ public abstract class Character {
         return damage;
     }
 
-    public void setDamage(int damage) {
+    // Nuevo método para establecer daño con validación
+    public void setDamage(int damage) throws MaxValuesException {
+        if (damage > MAX_DAMAGE) {
+            throw new MaxValuesException(damage);
+        }
         this.damage = damage;
     }
 }

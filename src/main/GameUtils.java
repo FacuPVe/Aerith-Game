@@ -10,8 +10,8 @@ package main;
  * @author Facundo Vera
  */
 import characters.Enemy;
-import characters.Boss;
 import characters.NPC;
+import exceptions.MaxValuesException;
 import items.Item;
 import items.Potion;
 import items.Weapon;
@@ -20,7 +20,7 @@ import java.util.Random;
 public class GameUtils {
     private static Random random = new Random();
 
-    public static Enemy generateRandomEnemy() {
+    public static Enemy generateRandomEnemy() throws MaxValuesException {
         return new Enemy("Demonio " + (random.nextInt(5) + 1), 30, 10);
     }
 
@@ -32,7 +32,7 @@ public class GameUtils {
         return new Weapon("Espada de Luz", 3, 20);
     }
 
-    public static NPC generateNPC(Inventory playerInventory) {
+    public static NPC generateNPC(Inventory playerInventory) throws MaxValuesException {
         String[] dialogues = {
             "¡Hola viajero! Toma esta poción para tu aventura.",
             "No es seguro andar solo, llévate esta espada.",

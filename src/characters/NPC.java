@@ -6,8 +6,9 @@ package characters;
 
 /**
  *
- * @author Facundo Vera
+@author Facundo Vera y Hector Iranzo
  */
+import exceptions.MaxValuesException;
 import interfaces.Interactable;
 import items.Item;
 import main.Inventory;
@@ -18,7 +19,7 @@ public class NPC extends Character implements Interactable {
     private Inventory playerInventory;
     private int x, y; // Posición del NPC en el mapa
 
-    public NPC(String name, String dialogue, Item reward, Inventory playerInventory) {
+    public NPC(String name, String dialogue, Item reward, Inventory playerInventory) throws MaxValuesException {
         super(name, 100, 0);
         this.dialogue = dialogue;
         this.reward = reward;

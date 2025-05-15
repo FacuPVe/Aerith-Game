@@ -4,12 +4,15 @@
  */
 package characters;
 
+import exceptions.MaxValuesException;
+
+
 /**
  *
  * @author Facundo Vera
  */
 public class Enemy extends Character {
-    public Enemy(String name, int hp, int damage) {
+    public Enemy(String name, int hp, int damage) throws MaxValuesException {
         super(name, hp, damage);
     }
 

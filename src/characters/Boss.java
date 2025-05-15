@@ -4,13 +4,15 @@
  */
 package characters;
 
+import exceptions.MaxValuesException;
+
 /**
  *
- * @author Facundo Vera
+ * @author Facundo Vera y Hector Iranzo
  */
 public class Boss extends Enemy {
 
-    public Boss() {
+    public Boss() throws MaxValuesException {
         super("Belcebú", 100, 25);
     }
 
