@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author Facundo Vera
+ * @author Facundo Vera y Hector Iranzo
  */
 public class Skill {
     

@@ -6,7 +6,7 @@ package model.characters;
 
 /**
  *
- * @author Facundo Vera
+ * @author Facundo Vera y Hector Iranzo
  */
 public class Boss extends Enemy {
 

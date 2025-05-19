@@ -6,7 +6,7 @@ package interfaces;
 
 /**
  *
- * @author Facundo Vera
+ * @author Facundo Vera y Hector Iranzo
  */
 import model.characters.Character;
 

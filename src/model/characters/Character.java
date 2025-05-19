@@ -9,7 +9,7 @@ import exceptions.CombatException;
 
 /**
  *
- * @author Facundo Vera
+ * @author Facundo Vera y Hector Iranzo
  */
 
 public abstract class Character {

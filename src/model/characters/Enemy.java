@@ -6,7 +6,7 @@ package model.characters;
 
 /**
  *
- * @author Facundo Vera
+ * @author Facundo Vera y Hector Iranzo
  */
 public class Enemy extends Character {
     public Enemy(String name, int hp, int damage) {

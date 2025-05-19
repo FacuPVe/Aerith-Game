@@ -6,7 +6,7 @@ package model.items;
 
 /**
  *
- * @author Facundo Vera
+ * @author Facundo Vera y Hector Iranzo
  */
 public class Weapon extends Item {
     private int attackBonus;

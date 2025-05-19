@@ -6,7 +6,7 @@ package model.characters;
 
 /**
  *
- * @author Facundo Vera
+ * @author Facundo Vera y Hector Iranzo
  */
 import interfaces.Movable;
 import exceptions.InvalidMovementException;
